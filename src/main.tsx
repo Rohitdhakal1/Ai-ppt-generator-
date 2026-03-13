@@ -3,12 +3,12 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Workspace from "./Workspace/index.tsx";
+import Workspace from "./features/workspace/WorkspaceLayout.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
-import { UserDetailContext } from "./../context/UserDetailContext.tsx";
-import Outline from "./Workspace/project/Outline/index.tsx";
-import Editor from "./Workspace/project/editor/index.tsx";
-import Pricing from "./Workspace/Pricing/index.tsx";
+import { UserDetailContext } from "./contexts/UserDetailContext.tsx";
+import Outline from "./features/projects/pages/OutlinePage.tsx";
+import Editor from "./features/projects/pages/EditorPage.tsx";
+import Pricing from "./features/pricing/PricingPage.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },

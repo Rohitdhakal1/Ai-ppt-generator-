@@ -1,6 +1,8 @@
+"use client"
+
 import { useState } from "react"
 import { Play, XIcon } from "lucide-react"
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -46,7 +48,7 @@ const animationVariants = {
   "from-right": {
     initial: { x: "100%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
-    exit: { x: "100%", opacity: 0 },
+    exit: { x: "-100%", opacity: 0 },
   },
   fade: {
     initial: { opacity: 0 },
@@ -61,7 +63,7 @@ const animationVariants = {
   "left-in-right-out": {
     initial: { x: "-100%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
-    exit: { x: "100%", opacity: 0 },
+    exit: { x: "-100%", opacity: 0 },
   },
 }
 
@@ -93,7 +95,7 @@ export function HeroVideoDialog({
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
           <div className="bg-primary/10 flex size-28 items-center justify-center rounded-full backdrop-blur-md">
             <div
-              className={`from-primary/30 to-primary relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
+              className={`from-primary/30 to-primary relative flex size-20 scale-100 items-center justify-center rounded-full bg-linear-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
             >
               <Play
                 className="size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
@@ -113,7 +115,7 @@ export function HeroVideoDialog({
             animate={{ opacity: 1 }}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => {
+            onKeyDown={(e: React.KeyboardEvent) => {
               if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
                 setIsVideoOpen(false)
               }
@@ -127,14 +129,14 @@ export function HeroVideoDialog({
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
               className="relative mx-4 aspect-video w-full max-w-4xl md:mx-0"
             >
-              <motion.button className="absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black">
+              <button className="absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black">
                 <XIcon className="size-5" />
-              </motion.button>
-              <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
+              </button>
+              <div className="relative isolate z-1 size-full overflow-hidden rounded-2xl border-2 border-white">
                 <iframe
                   src={videoSrc}
                   title="Hero Video player"
-                  className="size-full rounded-2xl"
+                  className="mt-0 size-full rounded-2xl"
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>
