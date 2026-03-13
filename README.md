@@ -1,4 +1,4 @@
-# AI Presentation Generator 🚀✨
+# AI Presentation Generator ✨ (-__-)
 
 A sophisticated, full-stack web application that leverages Local AI (Ollama) and Firebase to generate high-quality, professional presentations from simple text prompts.
 
@@ -22,7 +22,7 @@ A sophisticated, full-stack web application that leverages Local AI (Ollama) and
 - **Export Engine**: PptxGenJS
 - **Icons**: Lucide React
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -58,7 +58,7 @@ A sophisticated, full-stack web application that leverages Local AI (Ollama) and
     npm run dev
     ```
 
-## 🧹 Project Logic (Hinglish ❤️)
+##  Project Logic 
 
 Humne project ki core logic ko Hinglish me document kiya hai taaki development aur debugging fast ho sake. 
 - `OutlinePage.tsx`: AI streaming aur content extraction logic.
@@ -75,6 +75,6 @@ Humne project ki core logic ko Hinglish me document kiya hai taaki development a
 - **Theme Marketplace**: Allowing users to create and share custom design styles.
 - **Audio Integration**: Adding voiceovers and background music to exports.
 
-## ✨ Author
+## Author
 
 Developed with ❤️ by Rohit.
